@@ -1,4 +1,3 @@
-import Vue from 'vue';
 <template>
   <select
     v-model="selectedLanguage"
