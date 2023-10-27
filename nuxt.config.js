@@ -4,14 +4,16 @@ export default {
     const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     return {
       htmlAttrs: {
-        title: 'learn-nuxt-i18n',
+        title: 'Nuxt i18n',
         ...i18nHead.htmlAttrs
       },
+      title: 'Nuxt i18n',
       meta: [
         { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'learn nuxt i18n' },
+        { hid: 'og:image', property: 'og:image', content: 'https://developer.mozilla.org/mdn-social-share.png' },
+        { name: 'format-detection', content: 'telephone=no' },
         ...i18nHead.meta
       ],
       link: [
