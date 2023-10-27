@@ -48,11 +48,13 @@ export default {
     locales: [
       {
         code: 'id',
+        name: 'Indonesia',
         iso: 'id-ID',
-        file: 'id.js'
+        file: 'id.js',
       },
       {
         code: 'en',
+        name: 'English',
         iso: 'en-US',
         file: 'en.js'
       }

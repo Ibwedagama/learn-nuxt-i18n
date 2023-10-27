@@ -11,5 +11,6 @@
         <NuxtLink to="/about">Tentang Kami</NuxtLink>
       </li>
     </ul>
+    <LanguageSwitcher />
   </header>
 </template>
