@@ -1,17 +1,24 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'learn-nuxt-i18n',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
+  head () {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      htmlAttrs: {
+        title: 'learn-nuxt-i18n',
+        ...i18nHead.htmlAttrs
+      },
+      meta: [
+        { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        ...i18nHead.meta
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        ...i18nHead.link
+      ]
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -37,7 +44,23 @@ export default {
   ],
 
   i18n: {
-    /* module options */
+    baseUrl: 'http://localhost:3000',
+    locales: [
+      {
+        code: 'id',
+        iso: 'id-ID',
+        file: 'id.js'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.js'
+      }
+    ],
+    defaultLocale: 'id',
+    strategy: 'prefix_except_default',
+    lazy: true, // optional
+    langDir: 'locales'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
